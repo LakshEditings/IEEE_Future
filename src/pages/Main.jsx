@@ -18,7 +18,7 @@ export default function Main() {
     <div style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
       <h1 className="title-glow">Inside Quantum</h1>
       <p className="subtitle">Click a module to explore</p>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
         {modules.map((mod) => (
           <Link to={mod.route} key={mod.id}>
@@ -32,6 +32,8 @@ export default function Main() {
             </div>
           </Link>
         ))}
+    <p className="subtitle">By IEEE-BIT Students</p>
+
       </div>
     </div>
   );
