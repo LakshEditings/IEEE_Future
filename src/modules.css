@@ -1,0 +1,244 @@
+/* General layout for modules */
+.module-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.module-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff, #8be9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(139, 233, 255, 0.4);
+}
+
+.module-subtitle {
+  color: #a0aec0;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.module-card {
+  background: rgba(10, 15, 40, 0.6);
+  border: 1px solid rgba(139, 233, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.module-message {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(139, 233, 255, 0.1);
+  border-left: 4px solid #8be9ff;
+  border-radius: 0 8px 8px 0;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #5b21b6, #3b82f6);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Superposition Specific */
+.switch-container {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.system-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(0,0,0,0.3);
+  padding: 2rem;
+  border-radius: 12px;
+  min-width: 300px;
+}
+
+/* Quantum Tunneling Specific */
+.tunnel-arena {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.wall {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(166, 32, 255, 0.2), rgba(0, 240, 255, 0.8), rgba(166, 32, 255, 0.2));
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.particle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #00f0ff);
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+}
+
+/* Entanglement Specific */
+.dice-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.dice-wrapper {
+  z-index: 2;
+  cursor: pointer;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  background: rgba(20, 20, 50, 0.8);
+  border: 2px solid #a620ff;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 30px rgba(166, 32, 255, 0.5) inset, 0 0 20px rgba(166, 32, 255, 0.5);
+  text-shadow: 0 0 10px white;
+}
+
+.energy-line {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  right: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #8be9ff, transparent);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Duality Specific */
+.duality-arena {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.slit-barrier {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 100%;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slit {
+  width: 100%;
+  height: 60px;
+  background: transparent;
+}
+
+.solid-part {
+  width: 100%;
+  background: #2a2a40;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.screen {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  border-left: 2px solid rgba(139, 233, 255, 0.3);
+}
+
+.controls-toggle {
+  display: flex;
+  background: rgba(0,0,0,0.4);
+  border-radius: 30px;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.toggle-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(90deg, #a620ff, #00f0ff);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+}
