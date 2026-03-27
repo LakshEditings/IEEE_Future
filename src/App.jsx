@@ -5,6 +5,7 @@ import Superposition from './pages/Superposition';
 import QuantumTunneling from './pages/QuantumTunneling';
 import Entanglement from './pages/Entanglement';
 import WaveParticleDuality from './pages/WaveParticleDuality';
+import Team from './pages/Team';
 import './index.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/tunneling" element={<QuantumTunneling />} />
         <Route path="/entanglement" element={<Entanglement />} />
         <Route path="/duality" element={<WaveParticleDuality />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
     </BrowserRouter>
   );

@@ -32,9 +32,20 @@ export default function Main() {
             </div>
           </Link>
         ))}
-    <p className="subtitle">By IEEE-BIT Students</p>
-
       </div>
-    </div>
+
+      <div style={{ marginTop: '4rem' }}>
+        <Link to="/team" style={{
+          display: 'inline-block', padding: '12px 24px', borderRadius: '30px', 
+          background: 'rgba(0, 240, 255, 0.1)', border: '1px solid #00f0ff', 
+          color: '#00f0ff', fontWeight: 'bold', textDecoration: 'none',
+          boxShadow: '0 0 15px rgba(0, 240, 255, 0.3)', transition: 'all 0.3s'
+        }}
+        onMouseOver={e => e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 240, 255, 0.8)'}
+        onMouseOut={e => e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.3)'}
+        >
+          Built by IEEE-BIT Students →
+        </Link>
+      </div>
   );
 }
