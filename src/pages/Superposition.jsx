@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../modules.css';
+import soundEngine from '../utils/soundEngine';
 
 export default function Superposition() {
   const [classicalOn, setClassicalOn] = useState(false);
@@ -31,9 +32,23 @@ export default function Superposition() {
     };
   };
 
+  useEffect(() => {
+    if (isSuperposition) {
+      soundEngine.startAmbientShimmer();
+    } else {
+      soundEngine.stopAmbientShimmer();
+    }
+    return () => soundEngine.stopAmbientShimmer();
+  }, [isSuperposition]);
+
   const measure = () => {
+    soundEngine.stopHum();
+    soundEngine.playSnap();
     setFlash(true);
-    setTimeout(() => setFlash(false), 150);
+    setTimeout(() => {
+      setFlash(false);
+      soundEngine.playWhoosh();
+    }, 150);
     // Random collapse
     const result = Math.random() > 0.5 ? 100 : 0;
     setSliderValue(result);
@@ -48,6 +63,7 @@ export default function Superposition() {
   const handleSlider = (e) => {
     setSliderValue(Number(e.target.value));
     setIsMeasured(false);
+    soundEngine.playHum(Number(e.target.value));
   };
 
   return (
@@ -110,6 +126,8 @@ export default function Superposition() {
                   min="0" max="100" 
                   value={sliderValue} 
                   onChange={handleSlider}
+                  onMouseUp={() => soundEngine.stopHum()}
+                  onTouchEnd={() => soundEngine.stopHum()}
                   style={{
                     appearance: 'slider-vertical',
                     width: '8px', height: '100%',

@@ -3,44 +3,44 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Replace extensions if actual files are .png or .jpeg
-import imgLakshen from '../assets/V_LAKSHEN.jpg';
-import imgSidtharth from '../assets/RK_SIDTHARTH.jpg';
-import imgRohith from '../assets/ROHITH_G.jpg';
-import imgBaranedharan from '../assets/BARANEDHARAN_K.jpg';
+import imgD from '../assets/Dharani.jpeg';
+import imgS from '../assets/Sadhana.png';
+import imgL from '../assets/Lakshen.jpeg';
+import imgR from '../assets/Rukhsar.jpeg';
 
 const teamMembers = [
   {
     id: 1,
     name: "Dharani V",
     role: "IEEE EMBS Treasurer",
-    image: imgLakshen,
+    image: imgD,
     rotate: -4,
     yOffset: 0,
     namePos: 'bottom-left'
   },
   {
     id: 2,
-    name: "Sadhana S",
+    name: "Sadhana M",
     role: "WIE Secretary",
-    image: imgSidtharth,
+    image: imgS,
     rotate: 3,
     yOffset: 50,
     namePos: 'top'
   },
   {
     id: 3,
-    name: "Lakshen",
+    name: "V Lakshen",
     role: "IEEE SB Secretary",
-    image: imgRohith,
+    image: imgL,
     rotate: -2,
     yOffset: -20,
     namePos: 'bottom-left'
   },
   {
     id: 4,
-    name: "Rukhsar Maryam M",
+    name: "Rukhsar Maryam MS",
     role: "IEEE SB PRO",
-    image: imgBaranedharan,
+    image: imgR,
     rotate: 4,
     yOffset: 30,
     namePos: 'top'

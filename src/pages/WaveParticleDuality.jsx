@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../modules.css';
+import soundEngine from '../utils/soundEngine';
 
 export default function WaveParticleDuality() {
   const [mode, setMode] = useState('particle'); // 'particle' | 'wave'
@@ -10,31 +11,32 @@ export default function WaveParticleDuality() {
   const [screenDots, setScreenDots] = useState([]); // Accumulating hits
   const [wavePulses, setWavePulses] = useState([]);
   
-  // Ref for audio context to play soft ticks
-  const audioCtxRef = useRef(null);
-
-  // Initialize audio lazily
   const playTick = () => {
-    if (!audioCtxRef.current) {
-      audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    const ctx = audioCtxRef.current;
-    if (ctx.state === 'suspended') ctx.resume();
-    
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(800, ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.05);
-    
-    gain.gain.setValueAtTime(0.1, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
-    
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    osc.start();
-    osc.stop(ctx.currentTime + 0.05);
+    soundEngine.playTick();
   };
+
+  useEffect(() => {
+    if (mode === 'wave' && !observe) {
+      soundEngine.startWaveSynth();
+    } else {
+      soundEngine.stopWaveSynth();
+    }
+    return () => soundEngine.stopWaveSynth();
+  }, [mode, observe]);
+
+  const prevObserveRef = useRef(observe);
+  useEffect(() => {
+    if (observe && !prevObserveRef.current) {
+      soundEngine.playSnap();
+    }
+    prevObserveRef.current = observe;
+  }, [observe]);
+
+  useEffect(() => {
+    if (screenDots.length === 10) {
+      soundEngine.playRisingTone();
+    }
+  }, [screenDots.length]);
 
   const getTargetY = (isParticlePattern) => {
     // 350px container height. Screen is right side.
