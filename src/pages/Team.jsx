@@ -11,8 +11,8 @@ import imgBaranedharan from '../assets/BARANEDHARAN_K.jpg';
 const teamMembers = [
   {
     id: 1,
-    name: "V LAKSHEN",
-    role: "Programming Engineer",
+    name: "Dharani V",
+    role: "IEEE EMBS Treasurer",
     image: imgLakshen,
     rotate: -4,
     yOffset: 0,
@@ -20,8 +20,8 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "RK SIDTHARTH",
-    role: "Design Engineer",
+    name: "Sadhana S",
+    role: "WIE Secretary",
     image: imgSidtharth,
     rotate: 3,
     yOffset: 50,
@@ -29,8 +29,8 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "ROHITH G",
-    role: "Embedded Engineer",
+    name: "Lakshen",
+    role: "IEEE SB Secretary",
     image: imgRohith,
     rotate: -2,
     yOffset: -20,
@@ -38,8 +38,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "BARANEDHARAN K",
-    role: "SLAM Engineer",
+    name: "Rukhsar Maryam M",
+    role: "IEEE SB PRO",
     image: imgBaranedharan,
     rotate: 4,
     yOffset: 30,
@@ -121,14 +121,15 @@ export default function Team() {
                 color: '#0066cc',
                 fontStyle: 'italic',
                 fontWeight: '900',
-                fontSize: '1.4rem',
+                fontSize: '1.15rem',
                 textAlign: 'right',
                 position: 'absolute',
                 bottom: '10px',
                 right: '15px',
-                lineHeight: '1.1'
+                lineHeight: '1.1',
+                whiteSpace: 'nowrap'
               }}>
-                {member.role.split(' ').map((word, i) => <span key={i} style={{display: 'block'}}>{word}</span>)}
+                {member.role}
               </h3>
             </div>
 
