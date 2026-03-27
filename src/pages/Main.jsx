@@ -47,5 +47,6 @@ export default function Main() {
           Built by IEEE-BIT Students →
         </Link>
       </div>
+    </div>
   );
 }
